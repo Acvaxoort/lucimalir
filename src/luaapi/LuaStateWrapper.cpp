@@ -271,41 +271,6 @@ void LuaStateWrapper::prepareState() {
       .addFunction("range", &SharedPtrParameter::range)
       .addFunction("range_exp", &SharedPtrParameter::rangeExp)
       .endNamespace();
-/*
-  getGlobalNamespace(L)
-      .beginNamespace("filters")
-      .beginNamespace("renderers")
-      .addFunction("basic", &FilterProxy::rendererBasic)
-      .endNamespace()
-      .beginClass<FilterParamsProxy>("FilterParamsProxy")
-          //.addProperty("last_error", &FilterParamsProxy::getLastError)
-      .addStaticCFunction("__index", &FilterParamsProxy::index)
-      .addStaticCFunction("__newindex", &FilterParamsProxy::newindex)
-      .endClass()
-      .addFunction("connect", &FilterProxy::connect)
-      .beginClass<FilterProxy>("FilterProxy")
-      .addProperty("expired", &FilterProxy::isExpired)
-      .addProperty("auto_request", &FilterProxy::isAutoRequestOnChanges,
-                   &FilterProxy::setAutoRequestOnChanges)
-          //.addFunction("replace_filter", &FilterProxy::replaceFilter)
-      .addFunction("interrupt", &FilterProxy::interrupt)
-      .addFunction("request_rendering", &FilterProxy::requestRendering)
-      .addFunction("connect_to", &FilterProxy::connectTo)
-      .addProperty("input", &FilterProxy::getInput, &FilterProxy::setInput)
-      .addProperty("output", &FilterProxy::getOutput, &FilterProxy::setOutput)
-      .addProperty("params", &FilterProxy::getParams)
-      .endClass()
-      .endNamespace()
-      .beginNamespace("params")
-      .beginClass<ParameterProxy>("ParameterProxy")
-      .addFunction("__tostring", &ParameterProxy::tostring)
-      .endClass()
-      .addFunction("constant", &ParameterProxy::constant)
-      .addFunction("range", &ParameterProxy::range)
-      .addFunction("range_exp", &ParameterProxy::range_exp)
-      .addFunction("array", &ParameterProxy::array)
-      .endNamespace();
-*/
 
   lua_pushcfunction(L, lua_traceback);
   if (luaL_loadfile(L, "lucimalir.lua") != LUA_OK) {

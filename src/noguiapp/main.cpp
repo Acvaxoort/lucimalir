@@ -1,10 +1,9 @@
 #include <iostream>
-#include <luaapi/HelpStrings.h>
 #include <cstring>
 #include <set>
 #include <vector>
 #include <core/Core.h>
-#include "LuaStateWrapper.h"
+#include "luaapi/LuaStateWrapper.h"
 
 const char* HELP_STRING =
     R"(Usage: lucimalir [options] [filename1 filename2 ...]
