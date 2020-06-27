@@ -34,7 +34,6 @@ int main(int argc, const char** argv) {
 #endif
 
   try {
-    HelpStrings::getinstance();
     LuaStateWrapper lua_state(&std::cout, &std::cin, &std::cerr);
     std::vector<std::string> filenames;
     std::set<char> options;
