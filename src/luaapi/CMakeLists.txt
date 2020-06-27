@@ -1,0 +1,2 @@
+add_library(lua_lib proxies/FilterProxy.cpp proxies/FilterProxy.h proxies/BufferCollectionProxy.cpp proxies/BufferCollectionProxy.h proxies/ParameterProxy.cpp proxies/ParameterProxy.h proxies/FilterParamsProxy.cpp proxies/FilterParamsProxy.h ../core/wrappers/SharedPtrFilter.h ../core/wrappers/WeakPtrFilter.h ../core/wrappers/WeakPtrFilterWrapper.h)
+target_link_libraries(lua_lib core_lib)
